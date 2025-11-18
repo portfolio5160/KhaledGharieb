@@ -1,0 +1,80 @@
+/* Custom CSS for the Science Portfolio */
+
+/* Color Variables (Tailwind-like dark theme) */
+:root {
+    --background: oklch(0.08 0.01 260);
+    --foreground: oklch(0.92 0.01 65);
+    --card: oklch(0.12 0.015 260);
+    --card-foreground: oklch(0.92 0.01 65);
+    --accent: oklch(0.65 0.22 260);
+    --accent-foreground: oklch(0.95 0.01 65);
+    --border: oklch(1 0 0 / 8%);
+    --ring: oklch(0.65 0.22 260);
+}
+
+/* Apply variables to Tailwind classes */
+.bg-background { background-color: var(--background); }
+.text-foreground { color: var(--foreground); }
+.text-foreground\/70 { color: oklch(0.92 0.01 65 / 0.7); }
+.text-foreground\/80 { color: oklch(0.92 0.01 65 / 0.8); }
+.bg-card { background-color: var(--card); }
+.border-border { border-color: var(--border); }
+.border-border\/50 { border-color: oklch(1 0 0 / 4%); }
+.text-accent { color: var(--accent); }
+.bg-accent { background-color: var(--accent); }
+.hover\:bg-accent\/90:hover { background-color: oklch(0.65 0.22 260 / 0.9); }
+.text-accent-foreground { color: var(--accent-foreground); }
+.bg-accent\/10 { background-color: oklch(0.65 0.22 260 / 0.1); }
+.hover\:text-accent:hover { color: var(--accent); }
+.hover\:border-accent\/50:hover { border-color: oklch(0.65 0.22 260 / 0.5); }
+
+/* Custom Utilities from index.css */
+.glow-accent {
+    box-shadow: 0 0 15px oklch(0.65 0.22 260 / 0.3);
+}
+
+.gradient-science {
+    background: linear-gradient(135deg, oklch(0.6 0.2 260) 0%, oklch(0.5 0.22 280) 50%, oklch(0.55 0.2 300) 100%);
+}
+
+/* Custom Components for Expertise and Projects */
+.expertise-card {
+    @apply bg-card border border-border/50 rounded-xl p-6 transition-all duration-300 cursor-pointer;
+}
+.expertise-card:hover {
+    @apply border-accent/50 glow-accent;
+}
+.expertise-card:hover .text-4xl {
+    animation: float 6s ease-in-out infinite;
+}
+
+.project-card {
+    @apply bg-card border border-border/50 rounded-xl p-8 transition-all duration-300;
+}
+.project-card:hover {
+    @apply border-accent/50;
+}
+.tag {
+    @apply text-xs bg-accent/10 text-accent px-3 py-1 rounded-full;
+}
+
+/* Custom Animations */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+/* Ensure the canvas is styled correctly */
+#particle-canvas {
+    z-index: 0;
+}
+
+/* Fix for the mobile menu button icon size */
+#mobile-menu-button i {
+    width: 24px;
+    height: 24px;
+}

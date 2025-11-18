@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Khaled Gharieb - Science Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="min-h-screen bg-background text-foreground overflow-hidden">
+    <div id="root">
+        <canvas id="particle-canvas" class="fixed top-0 left-0 w-full h-full pointer-events-none opacity-50"></canvas>
+
+        <nav class="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
+            <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+                <div class="text-2xl font-bold gradient-science bg-clip-text text-transparent">
+                    KG
+                </div>
+
+                <div class="hidden md:flex gap-8" id="desktop-nav">
+                </div>
+
+                <button class="md:hidden" id="mobile-menu-button">
+                    <i data-lucide="menu" id="menu-icon"></i>
+                </button>
+            </div>
+
+            <div class="md:hidden border-t border-border bg-background/95 hidden" id="mobile-menu">
+                <div class="container mx-auto px-4 py-4 flex flex-col gap-4" id="mobile-nav">
+                </div>
+            </div>
+        </nav>
+
+        <main class="relative z-10">
+            <section id="home" class="min-h-screen flex items-center justify-center pt-20">
+                <div class="container mx-auto px-4">
+                    <div class="grid md:grid-cols-2 gap-12 items-center">
+                        <div class="space-y-6">
+                            <div class="space-y-2">
+                                <h1 class="text-5xl md:text-7xl font-bold leading-tight">
+                                    Khaled
+                                    <br>
+                                    <span class="gradient-science bg-clip-text text-transparent">
+                                        Gharieb
+                                    </span>
+                                </h1>
+                                <p class="text-xl text-accent font-semibold">
+                                    Senior Science Professional
+                                </p>
+                            </div>
+
+                            <p class="text-lg text-foreground/80 leading-relaxed max-w-lg">
+                                Dedicated to advancing scientific knowledge and innovation
+                                through research, education, and collaborative excellence.
+                            </p>
+
+                            <div class="flex gap-4 pt-4">
+                                <button data-section-id="projects" class="scroll-button bg-accent hover:bg-accent/90 text-accent-foreground px-4 py-2 rounded-lg font-medium transition-colors">
+                                    View My Work
+                                </button>
+                                <button data-section-id="contact" class="scroll-button border border-border hover:bg-border/50 text-foreground px-4 py-2 rounded-lg font-medium transition-colors">
+                                    Get In Touch
+                                </button>
+                            </div>
+
+                            <div class="flex gap-4 pt-4">
+                                <a href="#" class="text-foreground/60 hover:text-accent transition-colors" title="LinkedIn">
+                                    <i data-lucide="linkedin" class="w-6 h-6"></i>
+                                </a>
+                                <a href="#" class="text-foreground/60 hover:text-accent transition-colors" title="GitHub">
+                                    <i data-lucide="github" class="w-6 h-6"></i>
+                                </a>
+                                <a href="#" class="text-foreground/60 hover:text-accent transition-colors" title="Email">
+                                    <i data-lucide="mail" class="w-6 h-6"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="relative">
+                            <div class="absolute inset-0 bg-gradient-science rounded-2xl blur-3xl opacity-30"></div>
+                            <div class="relative bg-card rounded-2xl p-8 border border-border/50 glow-accent">
+                                <img
+                                    src="pasted_file_It1TgY_WhatsAppImage2025-11-18at12.16.30AM.jpeg"
+                                    alt="Khaled Gharieb"
+                                    class="w-full rounded-lg object-cover aspect-square"
+                                >
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="about" class="py-20 border-t border-border">
+                <div class="container mx-auto px-4">
+                    <h2 class="text-4xl md:text-5xl font-bold mb-12">About Me</h2>
+
+                    <div class="grid md:grid-cols-2 gap-12">
+                        <div class="space-y-6">
+                            <div class="bg-card border border-border/50 rounded-xl p-6 hover:border-accent/50 transition-colors">
+                                <h3 class="text-xl font-semibold text-accent mb-3">
+                                    Professional Background
+                                </h3>
+                                <p class="text-foreground/80 leading-relaxed">
+                                    With extensive experience in scientific research and
+                                    education, I am committed to pushing the boundaries of
+                                    knowledge and fostering innovation in the scientific
+                                    community.
+                                </p>
+                            </div>
+
+                            <div class="bg-card border border-border/50 rounded-xl p-6 hover:border-accent/50 transition-colors">
+                                <h3 class="text-xl font-semibold text-accent mb-3">
+                                    Core Values
+                                </h3>
+                                <ul class="space-y-2 text-foreground/80">
+                                    <li class="flex items-start gap-3">
+                                        <span class="text-accent mt-1">→</span>
+                                        <span>Rigorous scientific methodology</span>
+                                    </li>
+                                    <li class="flex items-start gap-3">
+                                        <span class="text-accent mt-1">→</span>
+                                        <span>Collaborative excellence</span>
+                                    </li>
+                                    <li class="flex items-start gap-3">
+                                        <span class="text-accent mt-1">→</span>
+                                        <span>Ethical practice and integrity</span>
+                                    </li>
+                                    <li class="flex items-start gap-3">
+                                        <span class="text-accent mt-1">→</span>
+                                        <span>Knowledge dissemination</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="space-y-6">
+                            <div class="bg-card border border-border/50 rounded-xl p-6">
+                                <h3 class="text-xl font-semibold text-accent mb-4">
+                                    Key Information
+                                </h3>
+                                <div class="space-y-4 text-foreground/80">
+                                    <div>
+                                        <p class="text-sm text-foreground/60 mb-1">
+                                            Full Name
+                                        </p>
+                                        <p class="font-semibold">Khaled Gharieb</p>
+                                    </div>
+                                    <div>
+                                        <p class="text-sm text-foreground/60 mb-1">
+                                            Date of Birth
+                                        </p>
+                                        <p class="font-semibold">November 18, 1987</p>
+                                    </div>
+                                    <div>
+                                        <p class="text-sm text-foreground/60 mb-1">
+                                            Specialization
+                                        </p>
+                                        <p class="font-semibold">Senior Science</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="bg-gradient-science rounded-xl p-6 text-accent-foreground">
+                                <h3 class="text-xl font-semibold mb-3">
+                                    Passion for Science
+                                </h3>
+                                <p class="leading-relaxed">
+                                    Driven by curiosity and a deep passion for understanding
+                                    the natural world, I dedicate myself to advancing scientific
+                                    knowledge through rigorous research and education.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="expertise" class="py-20 border-t border-border">
+                <div class="container mx-auto px-4">
+                    <h2 class="text-4xl md:text-5xl font-bold mb-12">Expertise</h2>
+
+                    <div class="grid md:grid-cols-3 gap-6">
+                        <div class="expertise-card">
+                            <div class="text-4xl mb-4">🔬</div>
+                            <h3 class="text-xl font-semibold text-accent mb-2">Research</h3>
+                            <p class="text-foreground/70 text-sm leading-relaxed">
+                                Conducting rigorous scientific research with focus on innovation and discovery
+                            </p>
+                        </div>
+                        <div class="expertise-card">
+                            <div class="text-4xl mb-4">📚</div>
+                            <h3 class="text-xl font-semibold text-accent mb-2">Education</h3>
+                            <p class="text-foreground/70 text-sm leading-relaxed">
+                                Teaching and mentoring the next generation of scientists
+                            </p>
+                        </div>
+                        <div class="expertise-card">
+                            <div class="text-4xl mb-4">📊</div>
+                            <h3 class="text-xl font-semibold text-accent mb-2">Analysis</h3>
+                            <p class="text-foreground/70 text-sm leading-relaxed">
+                                Data analysis and interpretation using advanced methodologies
+                            </p>
+                        </div>
+                        <div class="expertise-card">
+                            <div class="text-4xl mb-4">🤝</div>
+                            <h3 class="text-xl font-semibold text-accent mb-2">Collaboration</h3>
+                            <p class="text-foreground/70 text-sm leading-relaxed">
+                                Working effectively with interdisciplinary teams globally
+                            </p>
+                        </div>
+                        <div class="expertise-card">
+                            <div class="text-4xl mb-4">💡</div>
+                            <h3 class="text-xl font-semibold text-accent mb-2">Innovation</h3>
+                            <p class="text-foreground/70 text-sm leading-relaxed">
+                                Developing novel approaches and solutions to scientific challenges
+                            </p>
+                        </div>
+                        <div class="expertise-card">
+                            <div class="text-4xl mb-4">📄</div>
+                            <h3 class="text-xl font-semibold text-accent mb-2">Publication</h3>
+                            <p class="text-foreground/70 text-sm leading-relaxed">
+                                Disseminating research findings through peer-reviewed journals
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="projects" class="py-20 border-t border-border">
+                <div class="container mx-auto px-4">
+                    <h2 class="text-4xl md:text-5xl font-bold mb-12">
+                        Notable Projects
+                    </h2>
+
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div class="project-card">
+                            <h3 class="text-2xl font-semibold text-accent mb-3">
+                                Advanced Research Initiative
+                            </h3>
+                            <p class="text-foreground/70 mb-6 leading-relaxed">
+                                Led a comprehensive research project on emerging scientific phenomena with significant implications
+                            </p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="tag">Research</span>
+                                <span class="tag">Innovation</span>
+                                <span class="tag">Publication</span>
+                            </div>
+                            <a href="#" class="inline-flex items-center gap-2 text-accent hover:text-accent/80 transition-colors text-sm font-medium">
+                                Learn More <i data-lucide="external-link" class="w-4 h-4"></i>
+                            </a>
+                        </div>
+                        <div class="project-card">
+                            <h3 class="text-2xl font-semibold text-accent mb-3">
+                                Educational Program Development
+                            </h3>
+                            <p class="text-foreground/70 mb-6 leading-relaxed">
+                                Designed and implemented curriculum for advanced science education programs
+                            </p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="tag">Education</span>
+                                <span class="tag">Curriculum</span>
+                                <span class="tag">Mentoring</span>
+                            </div>
+                            <a href="#" class="inline-flex items-center gap-2 text-accent hover:text-accent/80 transition-colors text-sm font-medium">
+                                Learn More <i data-lucide="external-link" class="w-4 h-4"></i>
+                            </a>
+                        </div>
+                        <div class="project-card">
+                            <h3 class="text-2xl font-semibold text-accent mb-3">
+                                Collaborative Research Network
+                            </h3>
+                            <p class="text-foreground/70 mb-6 leading-relaxed">
+                                Established international collaboration framework for cross-institutional research
+                            </p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="tag">Collaboration</span>
+                                <span class="tag">International</span>
+                                <span class="tag">Networking</span>
+                            </div>
+                            <a href="#" class="inline-flex items-center gap-2 text-accent hover:text-accent/80 transition-colors text-sm font-medium">
+                                Learn More <i data-lucide="external-link" class="w-4 h-4"></i>
+                            </a>
+                        </div>
+                        <div class="project-card">
+                            <h3 class="text-2xl font-semibold text-accent mb-3">
+                                Data Analysis Framework
+                            </h3>
+                            <p class="text-foreground/70 mb-6 leading-relaxed">
+                                Developed comprehensive data analysis methodologies for complex scientific datasets
+                            </p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="tag">Analysis</span>
+                                <span class="tag">Methodology</span>
+                                <span class="tag">Technology</span>
+                            </div>
+                            <a href="#" class="inline-flex items-center gap-2 text-accent hover:text-accent/80 transition-colors text-sm font-medium">
+                                Learn More <i data-lucide="external-link" class="w-4 h-4"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="contact" class="py-20 border-t border-border">
+                <div class="container mx-auto px-4">
+                    <h2 class="text-4xl md:text-5xl font-bold mb-12">
+                        Get In Touch
+                    </h2>
+
+                    <div class="grid md:grid-cols-2 gap-12">
+                        <div class="space-y-6">
+                            <p class="text-lg text-foreground/80 leading-relaxed">
+                                I'm always interested in hearing about new research
+                                opportunities, collaborations, and innovative projects. Feel
+                                free to reach out!
+                            </p>
+
+                            <div class="space-y-4">
+                                <div class="flex items-start gap-4">
+                                    <i data-lucide="mail" class="text-accent mt-1 flex-shrink-0 w-6 h-6"></i>
+                                    <div>
+                                        <p class="text-sm text-foreground/60">Email</p>
+                                        <a href="mailto:khaled@example.com" class="text-foreground hover:text-accent transition-colors">
+                                            khaled@example.com
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <div class="flex items-start gap-4">
+                                    <i data-lucide="linkedin" class="text-accent mt-1 flex-shrink-0 w-6 h-6"></i>
+                                    <div>
+                                        <p class="text-sm text-foreground/60">LinkedIn</p>
+                                        <a href="#" class="text-foreground hover:text-accent transition-colors">
+                                            linkedin.com/in/khaledgharieb
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <div class="flex items-start gap-4">
+                                    <i data-lucide="github" class="text-accent mt-1 flex-shrink-0 w-6 h-6"></i>
+                                    <div>
+                                        <p class="text-sm text-foreground/60">GitHub</p>
+                                        <a href="#" class="text-foreground hover:text-accent transition-colors">
+                                            github.com/khaledgharieb
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-card border border-border/50 rounded-xl p-8">
+                            <form class="space-y-4">
+                                <div>
+                                    <label for="name" class="block text-sm font-medium mb-2">
+                                        Name
+                                    </label>
+                                    <input
+                                        type="text"
+                                        id="name"
+                                        class="w-full bg-background border border-border rounded-lg px-4 py-2 text-foreground placeholder-foreground/40 focus:outline-none focus:border-accent transition-colors"
+                                        placeholder="Your name"
+                                    >
+                                </div>
+
+                                <div>
+                                    <label for="email" class="block text-sm font-medium mb-2">
+                                        Email
+                                    </label>
+                                    <input
+                                        type="email"
+                                        id="email"
+                                        class="w-full bg-background border border-border rounded-lg px-4 py-2 text-foreground placeholder-foreground/40 focus:outline-none focus:border-accent transition-colors"
+                                        placeholder="your@email.com"
+                                    >
+                                </div>
+
+                                <div>
+                                    <label for="message" class="block text-sm font-medium mb-2">
+                                        Message
+                                    </label>
+                                    <textarea
+                                        id="message"
+                                        rows="4"
+                                        class="w-full bg-background border border-border rounded-lg px-4 py-2 text-foreground placeholder-foreground/40 focus:outline-none focus:border-accent transition-colors resize-none"
+                                        placeholder="Your message..."
+                                    ></textarea>
+                                </div>
+
+                                <button type="submit" class="w-full bg-accent hover:bg-accent/90 text-accent-foreground px-4 py-2 rounded-lg font-medium transition-colors">
+                                    Send Message
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="border-t border-border bg-card/50 py-8">
+            <div class="container mx-auto px-4 text-center text-foreground/60 text-sm">
+                <p>
+                    © 2024 Khaled Gharieb. All rights reserved. | Crafted with passion
+                    for science.
+                </p>
+            </div>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
